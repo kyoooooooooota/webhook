@@ -80,7 +80,7 @@ function addTextarea(placeholder){
 function addInput({ttl, val, placeholder}){
     return $("<input>").attr({
         placeholder: placeholder
-    }).val(val).appendTo($("<div>",{text: ttl + ':'}).appendTo(h));
+    }).val(val?val:null).appendTo($("<div>",{text: ttl + ':'}).appendTo(h));
 }
 function addBtn(ttl, func){
     return $("<button>",{text:ttl}).click(func).appendTo(h);
