@@ -21,7 +21,7 @@ var vvv = getParamList().v;
 var input_webhook = addInput({
     ttl: "Webhook URL",
     placeholder: "https://discordapp.com/api/webhooks/000000000000000000/aaaaaaaaaaaaaaaaaaaaaaaaa",
-    val: vvv ? vvv : null
+    val: vvv ? decode(vvv) : null
 });
 var input_username = addInput({
     ttl: "名前",
