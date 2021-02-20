@@ -17,10 +17,11 @@ var h = $("<div>").appendTo($("body").css({
     "text-align": "center"
 }));
 $("<h1>",{text:"discord webhooker"}).appendTo(h);
+var vvv = getParamList().v;
 var input_webhook = addInput({
     ttl: "Webhook URL",
     placeholder: "https://discordapp.com/api/webhooks/000000000000000000/aaaaaaaaaaaaaaaaaaaaaaaaa",
-    val: decode(getParamList().v)
+    val: vvv ? vvv : null
 });
 var input_username = addInput({
     ttl: "名前",
@@ -80,7 +81,7 @@ function addTextarea(placeholder){
 function addInput({ttl, val, placeholder}){
     return $("<input>").attr({
         placeholder: placeholder
-    }).val(val?val:null).appendTo($("<div>",{text: ttl + ':'}).appendTo(h));
+    }).val(val).appendTo($("<div>",{text: ttl + ':'}).appendTo(h));
 }
 function addBtn(ttl, func){
     return $("<button>",{text:ttl}).click(func).appendTo(h);
